@@ -51,8 +51,8 @@ Os cálculos usam ponto flutuante do JavaScript. Os resultados são arredondados
 
 ## Autoria
 
-README gerado com auxílio de IA (Claude, da Anthropic) e revisado pelo autor.
+feito por Dev PCapalbo. Intruções By Capalbo1
 
 ## Licença
 
-Uso livre. Adicione a licença de sua preferência (por exemplo, MIT).
+MIT
