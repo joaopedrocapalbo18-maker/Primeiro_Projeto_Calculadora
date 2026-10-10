@@ -2,58 +2,92 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Calculadora</title>
-  <meta name="description" content="Calculadora web com soma, subtração, multiplicação, divisão e potenciação.">
+  <meta name="description" content="Calculadora moderna com tema claro, tema escuro e histórico de cálculos.">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
+
 <body>
   <main class="app">
+
     <section class="calc" aria-label="Calculadora">
-      <div class="screen" aria-live="polite">
-        <div class="expr" id="expr">&nbsp;</div>
-        <output class="value" id="value">0</output>
+
+      <header class="calc-header">
+        <h1>Calculadora</h1>
+
+        <button
+          class="theme-toggle"
+          id="themeToggle"
+          type="button"
+          aria-label="Mudar para tema escuro"
+        >
+          🌙 <span>Tema escuro</span>
+        </button>
+      </header>
+
+      <div class="screen" aria-label="Visor da calculadora">
+        <div class="expr" id="expression" aria-live="polite"></div>
+        <output class="value" id="display" aria-live="polite">0</output>
       </div>
-      <div class="keys">
-        <button class="fn" data-action="clear">C</button>
-        <button class="fn" data-action="back" aria-label="Apagar">⌫</button>
-        <button class="fn" data-action="sign" aria-label="Inverter sinal">±</button>
-        <button class="op" data-op="/" aria-label="Dividir">÷</button>
 
-        <button data-num="7">7</button>
-        <button data-num="8">8</button>
-        <button data-num="9">9</button>
-        <button class="op" data-op="*" aria-label="Multiplicar">×</button>
+      <div class="keys" id="keys">
+        <button type="button" class="fn" data-action="clear">AC</button>
+        <button type="button" class="fn" data-action="sign">+/−</button>
+        <button type="button" class="fn" data-action="percent">%</button>
+        <button type="button" class="op" data-operator="/">÷</button>
 
-        <button data-num="4">4</button>
-        <button data-num="5">5</button>
-        <button data-num="6">6</button>
-        <button class="op" data-op="-" aria-label="Subtrair">−</button>
+        <button type="button" data-digit="7">7</button>
+        <button type="button" data-digit="8">8</button>
+        <button type="button" data-digit="9">9</button>
+        <button type="button" class="op" data-operator="*">×</button>
 
-        <button data-num="1">1</button>
-        <button data-num="2">2</button>
-        <button data-num="3">3</button>
-        <button class="op" data-op="+" aria-label="Somar">+</button>
+        <button type="button" data-digit="4">4</button>
+        <button type="button" data-digit="5">5</button>
+        <button type="button" data-digit="6">6</button>
+        <button type="button" class="op" data-operator="-">−</button>
 
-        <button data-num="0">0</button>
-        <button data-action="dot">,</button>
-        <button class="op" data-op="^" aria-label="Potência">xʸ</button>
-        <button class="eq" data-action="equals" aria-label="Igual">=</button>
+        <button type="button" data-digit="1">1</button>
+        <button type="button" data-digit="2">2</button>
+        <button type="button" data-digit="3">3</button>
+        <button type="button" class="op" data-operator="+">+</button>
+
+        <button type="button" class="fn" data-action="backspace" aria-label="Apagar último dígito">⌫</button>
+        <button type="button" data-digit="0">0</button>
+        <button type="button" data-action="decimal">,</button>
+        <button type="button" class="eq" data-action="equals">=</button>
       </div>
+
+      <p class="keyboard-hint">
+        Você também pode usar o teclado do computador.
+      </p>
     </section>
 
-    <aside class="panel" aria-label="Painel de histórico">
-      <header>
-        <h2>Histórico</h2>
-        <button class="clear-hist" id="clearHist">Limpar</button>
+    <aside class="panel" aria-label="Histórico de cálculos">
+      <header class="panel-header">
+        <div>
+          <h2>Contas Anteriores</h2>
+          <p class="panel-subtitle">Seus cálculos recentes</p>
+        </div>
+
+        <button type="button" class="clear-hist" id="clearHistory">
+          Limpar
+        </button>
       </header>
-      <ul id="history"></ul>
-      <p class="empty" id="empty">Nenhum cálculo ainda. Faça uma conta e ela aparece aqui.</p>
+
+      <ul id="history" aria-live="polite">
+        <li class="empty">Seus cálculos aparecerão aqui.</li>
+      </ul>
     </aside>
+
   </main>
-  <script src="script.js"></script>
 </body>
 </html>
+```
