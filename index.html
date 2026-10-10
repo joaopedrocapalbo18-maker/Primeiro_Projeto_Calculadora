@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora</title>
+  <meta name="description" content="Calculadora web com soma, subtração, multiplicação, divisão e potenciação.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <section class="calc" aria-label="Calculadora">
+      <div class="screen" aria-live="polite">
+        <div class="expr" id="expr">&nbsp;</div>
+        <output class="value" id="value">0</output>
+      </div>
+      <div class="keys">
+        <button class="fn" data-action="clear">C</button>
+        <button class="fn" data-action="back" aria-label="Apagar">⌫</button>
+        <button class="fn" data-action="sign" aria-label="Inverter sinal">±</button>
+        <button class="op" data-op="/" aria-label="Dividir">÷</button>
+
+        <button data-num="7">7</button>
+        <button data-num="8">8</button>
+        <button data-num="9">9</button>
+        <button class="op" data-op="*" aria-label="Multiplicar">×</button>
+
+        <button data-num="4">4</button>
+        <button data-num="5">5</button>
+        <button data-num="6">6</button>
+        <button class="op" data-op="-" aria-label="Subtrair">−</button>
+
+        <button data-num="1">1</button>
+        <button data-num="2">2</button>
+        <button data-num="3">3</button>
+        <button class="op" data-op="+" aria-label="Somar">+</button>
+
+        <button data-num="0">0</button>
+        <button data-action="dot">,</button>
+        <button class="op" data-op="^" aria-label="Potência">xʸ</button>
+        <button class="eq" data-action="equals" aria-label="Igual">=</button>
+      </div>
+    </section>
+
+    <aside class="panel" aria-label="Painel de histórico">
+      <header>
+        <h2>Histórico</h2>
+        <button class="clear-hist" id="clearHist">Limpar</button>
+      </header>
+      <ul id="history"></ul>
+      <p class="empty" id="empty">Nenhum cálculo ainda. Faça uma conta e ela aparece aqui.</p>
+    </aside>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
